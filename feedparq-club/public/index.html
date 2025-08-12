@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feedparq</title>
+    <meta name="description" content="content feeds curated by humans">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cstyle%3E %23m %7B opacity:0; %7D%0A@media (prefers-color-scheme: dark) %7B %23m %7B opacity:1; %7D %23e %7B opacity:0 %7D%0A%7D %3C/style%3E%3Ctext id='m' y='.9em' font-size='90'%3E🎈%3C/text%3E%3Ctext id='e' y='.9em' font-size='90'%3E🎈%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="/styles.css">
+    <link type="application/octet-stream" title="settings.parquet" href="file://feedparq.fs/settings.parquet" data-settings>
+    <link type="application/octet-stream" title="feeds.parquet" href="https://assets.feedparq.club/feeds/feeds.parquet" data-channel>
+</head>
+<body>
+
+    <header>
+    <div id="header">
+        <h1>🎈 feedparq</h1>
+        <nav id="links">
+            <a href="/wtf">wtf</a>
+            | <a id="next" title="/somewhere" href="https://feedparq.club/somewhere">next</a>
+            | <a href="/random">random</a>
+        </nav>
+    </div>
+
+    <div id="subheader">
+        <div id="sponsored">
+            💵 <strong>sponsored</strong> by <em><a id="sponsored" href="https://www.somewhere.com" target="_blank">somewhere.com</a></em>
+        </div>
+        <div id="curated">
+            🏷️ <strong>curated</strong> by <em><a id="curated" href="https://example.com/someone" target="_blank">@someone</a></em>
+        </div>
+        <nav id="options">
+            <button id="links">links</button>
+                | <button id="more">more</button>
+        </div>
+    </div>
+    </header>
+    
+    <div id="loader">⏳</div>
+
+    <main></main>
+
+    <footer>
+        <nav id="links">
+            <a href="/settings">settings</a>
+            | <a href="mailto:feedparq@proton.me">contact</a>
+            | <a href="https://discord.gg/PNbjs8AQgN" target="_blank">discord</a>
+            | <a href="https://buymeacoffee.com/feedparq" target="_blank">buy me a coffee</a>
+        </nav>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+
+    <dialog>
+        <h3>connect your llm</h3>
+        <ul>
+            <li>none of this information is shared with feedparq</li>
+            <li>it only leaves this device in api calls to your llm</li>
+            <li>never in api calls to feedparq</li>
+        </ul>
+
+        <form>
+            <label for="model">model:</label>
+            <select id="model" required>
+                <option value="">Select a model</option>
+                <option value="gpt-4o">gpt-4o</option>
+                <option value="gpt-4o-mini">gpt-4o-mini</option>
+            </select>
+
+            <label for="key">api key:</label>
+            <input type="text" id="key" required pattern="^[a-zA-Z0-9_-]{20,}$">
+            <small>key must be at least 20 characters long and contain only letters, numbers, underscores, or hyphens.</small>
+
+            <div class="button-group">
+                <button type="button" id="cancel">cancel</button>
+                | <button type="submit">save</button>
+            </div>
+        </form>
+    </dialog>
+</body>
+</html>
+
