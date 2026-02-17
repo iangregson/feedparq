@@ -7,8 +7,8 @@ const RESERVED_SLUGS = new Set(['/wtf']);
 const SITE_SLUGS = Object.assign({}, slugsFile, {
   '/distributed-systems': {
     curated: {
-      link: 'https://discord.gg/jcphEVmxxc',
-      text: 'feedparq'
+      link: 'https://eatonphil.com/discord.html',
+      text: 'Software Internals'
     },
   },
   '/scottish-culture': {
